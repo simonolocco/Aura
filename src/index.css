@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #FAFAF9;
+  /* Stone 50 */
+  --color-surface: #FFFFFF;
+  --color-primary: #C5A059;
+  /* Muted Gold */
+  --color-primary-dark: #A38448;
+  --color-secondary: #78716C;
+  /* Stone 500 */
+  --color-text: #292524;
+  /* Stone 800 */
+  --color-text-light: #57534E;
+  /* Stone 600 */
+  --color-accent: #E7E5E4;
+  /* Stone 200 */
+
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/50 shadow-sm;
+  }
+
+  .btn-primary {
+    @apply bg-[var(--color-text)] text-white px-8 py-3 rounded-full font-medium transition-all duration-300 border border-transparent cursor-pointer hover:bg-[var(--color-secondary)] hover:-translate-y-px;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
