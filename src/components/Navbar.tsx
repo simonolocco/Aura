@@ -77,7 +77,7 @@ export const Navbar = () => {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: '100%' }}
                         transition={{ duration: 0.4, ease: "circOut" }}
-                        className="fixed inset-0 bg-[var(--color-bg)] z-50 flex flex-col items-center justify-center gap-8"
+                        className="fixed inset-0 bg-white h-screen w-screen z-[100] flex flex-col items-center justify-center gap-8"
                     >
                         <button
                             className="absolute top-6 right-6 p-2 text-[var(--color-text)] hover:rotate-90 transition-transform duration-300"
