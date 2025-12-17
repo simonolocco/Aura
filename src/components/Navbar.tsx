@@ -14,6 +14,17 @@ export const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    useEffect(() => {
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isMobileMenuOpen]);
+
     const navLinks = [
         { name: 'Inicio', href: '#inicio' },
         { name: 'Servicios', href: '#servicios' },
@@ -24,8 +35,8 @@ export const Navbar = () => {
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-                    ? 'glass py-4 text-[var(--color-text)]'
-                    : 'bg-transparent py-6 text-white'
+                ? 'glass py-4 text-[var(--color-text)]'
+                : 'bg-transparent py-6 text-white'
                 }`}
         >
             <div className="container flex justify-between items-center">
